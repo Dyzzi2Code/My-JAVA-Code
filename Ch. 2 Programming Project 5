@@ -1,0 +1,39 @@
+//Programming project #5. 
+//This program can give change from a dollar bill after a purchase.
+
+import java.util.Scanner;
+public class C2PP5_CW
+{
+   public static void main(String[] args)
+   {
+      Scanner keyboard = new Scanner(System.in);
+      
+      
+      int originalAmount, change, quarters, nickels, dimes;
+      int dollar = 100;
+      
+      System.out.println("Please enter the price of your item: ");
+      System.out.println("(from 25 cents to a dollar, in 5 cent increments): ");
+      
+      originalAmount = keyboard.nextInt();
+      while(((originalAmount % 5) == 0)&&(originalAmount > 25)&&(originalAmount < 101))
+      {
+         change = dollar - originalAmount;
+         quarters = change/25;
+         change = change % 25;
+         dimes = change/10;
+         change = change % 10;
+         nickels = change/5;
+         change = change % 5;
+         
+         change = dollar - originalAmount;
+         
+         System.out.println("The item you purchased was for " + originalAmount + " cents, and you gave me a dollar.");
+         System.out.println("Your change will be " + change + " cents. Given in: \n");
+         System.out.println(quarters + " Quarter(s)");
+         System.out.println(dimes + " Dime(s)");
+         System.out.println(nickels + " Nickel(s)");
+         break;
+      }//end while
+   }//end main
+}//end class
