@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class C2PP6_CW
+{
+  public static void main(String[] args)
+  {
+    Scanner keyboard = new Scanner(System.in);
+
+    String userInput, b0, b1, b2, b3;
+    int b0Int, b1Int, b2Int, b3Int, n;
+
+    System.out.println("Enter a 4 digit binary number: ");
+    userInput = keyboard.next();
+
+    //userInput.substring(0,2);// gives me position 0 and up to but not including position 2
+    b0 = userInput.substring(0,1);// gives me the value in the 1st position of the string
+    b1 = userInput.substring(1,2);// gives me the value in the 2nd position of the string
+    b2 = userInput.substring(2,3);// gives me the value in the 3rd position of the string
+    b3 = userInput.substring(3);  // gives me the value on the 4th position of the string
+
+    //using conversion chart pg.123
+    b0Int = Integer.parseInt(b0);// allows me to turn the string into a integer
+    b1Int = Integer.parseInt(b1);
+    b2Int = Integer.parseInt(b2);
+    b3Int = Integer.parseInt(b3);
+
+    n = b0Int * 8 + b1Int * 4 + b2Int * 2 + b3Int *1;
+    System.out.println(n);
+
+  }//end main
+}//end class
