@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class C2PP7_CW
+{
+   public static final double PI = 3.14159;
+   public static void main(String[] args)
+   {
+      double wellRadius, wellDepth, wellArea, gallons;
+      final double cubeFtH20 = 7.48;
+      
+      Scanner keyboard = new Scanner(System.in);
+      
+      System.out.println("Please enter the radius of the well casing in inches: ");
+      wellRadius = keyboard.nextDouble();//read radius entered
+      
+      wellRadius = wellRadius / 12.0;//converting to feet
+      
+      System.out.println("Thank you. \n");
+      System.out.println("Now enter the depth of the well in feet");
+      wellDepth = keyboard.nextDouble();
+      
+      wellArea = PI * wellRadius * wellRadius * wellDepth;//finding the area of the well
+      gallons = wellArea * cubeFtH20;//applying area to find the gallons this well can hold
+      
+      System.out.println("The casing to this well can hold up to " + gallons + " gallons of water.");
+   }//end main
+}//end class
